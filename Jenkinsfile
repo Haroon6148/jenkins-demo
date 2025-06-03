@@ -13,11 +13,13 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                sh 'echo "Deploying..."'
-                sh 'cp index.html /var/www/html/'
-            }
-        }
+       stage('Deploy') {
+    steps {
+        sh 'echo "Deploying..."'
+        sh 'mkdir -p $HOME/deploy'
+        sh 'cp index.html $HOME/deploy/'
+    }
+}
+
     }
 }
